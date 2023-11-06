@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald: 400, 700');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgb(67, 71, 80);
+}
+
+ul{
+    position: relative;
+    transform: skewY(-15deg);
+}
+
+
+/* button front style */
+ul li{
+    position: relative;
+    list-style: none;
+    width: 200px;
+    background: rgb(62, 63, 70);
+    padding: 15px;
+    z-index: var(--i);
+    transition: 0.5s;
+}
+
+/* button color style */
+ul li:hover{
+    background-color: rgb(27, 187, 187);
+    transform: translateX(50px);
+}
+
+/* button left side style */
+ul li:hover::before{
+    background: rgb(27, 145, 145);
+}
+
+/* button top style */
+ul li:hover::after{
+    background: rgb(27, 165, 165);
+}
+
+/* button left side style to give 3D */
+ul li::before{ 
+    content: ' ';
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    transform-origin:right;
+    transform: skewY(45deg);
+    background: rgb(46, 49, 51);
+    transition: 0.5s;
+}
+
+
+/* button top style to give 3D */
+ul li::after{
+    content: ' ';
+    position: absolute;
+    top: -40px;
+    left: 0;
+    height: 40px;
+    width: 100%;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+    background: rgb(53, 56, 62);
+}
+
+/* button text style */
+ul li a{
+    text-decoration: none;
+    color: rgb(153, 153, 153);
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+/* button text color */
+ul li:hover a{
+    color: white;
+}
+
+ul li:last-child::after{
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.25);
+}
