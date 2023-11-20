@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Anton', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(172, 186, 202);
+}
+
+.clock{
+    position: relative;
+    display: flex;
+    gap: 20px;
+}
+
+.clock .digital{
+    position: relative;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(201, 213, 224);
+    border-radius: 30px;
+    box-shadow: 20px 20px 20px -10px rgba(0, 0, 0, 0.15),
+    inset 15px 15px 10px rgba(255, 255, 255, 0.5),
+    -15px -15px 35px rgba(255, 255, 255, 0.35),
+    inset -1px -1px 10px rgba(0, 0, 0, 0.2);
+}
+
+.clock .digital .screen{
+    position: absolute;
+    inset: 20px;
+    background: rgb(21, 43, 74);
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 15px 0 rgba(21, 43, 74, 0.40),
+    inset 5px 5px 5px rgba(255, 255, 255, 0.35),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+}
+
+.clock .digital .screen::before{
+    content: attr(data-text);
+    position: absolute;
+    bottom: -21px;
+    left: 50%;
+    transform: translateX(-50%) scale(0.75);
+    letter-spacing: 0.1rem;
+    color: rgb(51, 51, 51);
+    text-transform: uppercase;
+}
+
+.clock .digital .time{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clock .digital .time div{
+    position: relative;
+    font-size: 2.9rem;
+    color: var(--clr);
+    letter-spacing: 0.1rem;
+    margin-left: 0.1rem;
+
+}
+
+.clock .digital:nth-last-child(2) .time div{
+    color: transparent;
+    -webkit-text-stroke: 2px var(--clr);
+}
+
+.clock .digital:nth-last-child(1)::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgb(21, 43, 74);
+    border: 2px solid rgb(255, 255, 255);
+    z-index: 1000000;
+    
+}
+.clock .digital:nth-last-child(1)::after{
+    content: '';
+    position: absolute;
+    inset: 20px;
+    background: rgb(21, 43, 74);
+    border-radius: 50%;
+    box-shadow: 5px 5px 15px 0 rgba(21, 43, 74, 0.40),
+    inset 5px 5px 5px rgba(255, 255, 255, 0.35),
+    -6px -6px 10px rgba(255, 255, 255, 1);
+}
