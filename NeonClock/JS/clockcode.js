@@ -3,6 +3,10 @@ let minutes = document.getElementById('minutes');
 let seconds = document.getElementById('seconds');
 let ampm = document.getElementById('ampm');
 
+let hr = document.querySelector('#hr');
+let mn = document.querySelector('#mn');
+let sc = document.querySelector('#sc');
+
 setInterval(() =>{
     let h = new Date().getHours();
     let m = new Date().getMinutes();
@@ -25,4 +29,7 @@ setInterval(() =>{
     minutes.innerHTML = m;
     seconds.innerHTML = s;
     ampm.innerHTML = am;
+    hr.style.transform = `rotateZ(${h * 30}deg)`;
+    mn.style.transform = `rotateZ(${m * 6}deg)`;
+    sc.style.transform = `rotateZ(${s * 6}deg)`;
 })
